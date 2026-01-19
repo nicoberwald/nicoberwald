@@ -1,14 +1,9 @@
-name: Generate Snake
+name: Generate Pacman (Snake)
 
 on:
-  # Run automatically every 24 hours
   schedule:
     - cron: "0 */24 * * *" 
-  
-  # Allows you to manually run the job at any time
   workflow_dispatch:
-  
-  # Run on every push to the master branch
   push:
     branches:
     - master
@@ -21,18 +16,15 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      # Generates the snake animation
       - name: generate-snake-game-from-github-contribution-grid
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/pacman-contribution-graph.svg
+            dist/pacman-contribution-graph-dark.svg?palette=github-dark
 
-      # Pushes the generated files to the "output" branch
-      # (We switched this part to 'peaceiris' to fix the error)
-      - name: push github-contribution-grid-snake.svg to the output branch
+      - name: push pacman-contribution-graph to the output branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
