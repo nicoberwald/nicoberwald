@@ -4,6 +4,7 @@
   
   <p>
     Based in Aarhus, Denmark 🇩🇰 &nbsp;•&nbsp; 
+    <a href="https://midendian.com/">🌐 midendian.com</a> &nbsp;•&nbsp; 
     <a href="https://unifiedapp.dev/">🌐 unifiedapp.dev</a>
   </p>
 
